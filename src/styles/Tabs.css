@@ -1,0 +1,87 @@
+.tabs-container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 55px;
+    border-radius: 13px;
+    background-color: #1b1c36;
+}
+
+.tabs-navigator {
+    width: 100%;
+    height: 4.1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 13px;
+    justify-content: center;
+    background-color: trasnparent;
+    text-align: center;
+    padding: 5px 13px;
+    border-bottom: 2px solid slateblue;
+    & button {
+        height: 100%;
+        width: auto;
+        padding: 0 13px;
+        text-overflow:ellipsis;
+        background-color: slateblue;
+        color: azure;
+        font-weight: bolder;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+    }
+    & div {
+        border: 1px solid slateblue;
+        font-weight: bolder;
+    }
+    & button, div {
+        color: var(--lg-color);
+        border-radius: 13px;
+        display: flex;
+        width: 13%;
+        justify-content: center;
+        align-items: center;
+
+    }
+}
+
+.tabs-content-container {
+    display: flex;
+    width: 100%;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    padding: 10px 55px 13px;
+    & .header {
+        width: 100%;
+        text-align: center;
+    }
+    & .body{
+        width: 100%;
+        gap: 8px;
+    }
+    & .tab-content__grid > div {
+        background-color: #0a0a0a;
+        padding: 5px 13px;
+        border-radius: 8px;
+        & h6 {
+            margin-bottom: 13px;
+        }
+        & p{
+            width: 90%;
+            text-align: right;
+        }
+    }
+    & .tab-content__grid {
+        width: 100%;
+        max-width: 1600px;
+        margin-right: auto;
+        margin-left: auto;
+        display: grid;
+        grid-auto-flow: dense;
+        grid-auto-rows: max-content;
+        grid-template-columns: repeat(auto-fill, minmax(min(25%, 15rem), 2fr));
+        padding: 13px;
+        gap: 13px;
+    }
+
+}

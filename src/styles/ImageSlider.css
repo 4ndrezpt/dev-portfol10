@@ -1,0 +1,107 @@
+.ImageSlider-container {
+    max-width: 100%;
+    display: flex;
+    height: fit-content;
+    max-height: 120%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #292929;
+    padding: 3% 0;
+    margin: 0;
+    position: relative;
+    & img {
+        min-width: 450px;
+    }
+}
+.hide-image {
+    display: none;
+}
+.current-image {
+    border-radius: 0.62rem;
+    box-shadow: 0 0 5px #333;
+    width: 100%;
+    height: 100%;
+    & .card-slide-container {
+        height: 450px;
+        background-color: #1b1c36;
+        width: fit-content;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 55px 89px;
+        border-radius: 13px;
+        & .header {
+            width: 100%;
+            margin-bottom: 21px;
+            color: cyan;
+        }
+        & .body {
+            display: flex;
+            & p {
+                max-width: 22rem;
+                text-align: left;
+                color: lightcyan;
+            }
+        }
+        & .footer {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 55px 0;
+        }
+    }
+    & img {
+        max-width: 800px;
+    }
+}
+.ImageSlider-layout {
+    display: flex;
+    min-width: 70%;
+    max-height: 50vh;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+.arrow-right{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    top: 40%;
+    right: 10px;
+    border-radius: 50%;
+    cursor:pointer;
+}
+.arrow-left{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    top: 40%;
+    left: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.circle-indexes {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    padding: 13px 30%;
+    justify-content: center;
+    justify-content: space-between;
+}
+.index-indicator {
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid white;
+    background-color: orangered;
+}
+
+.index-inactive {
+    width: 1rem;
+    height: 1rem;
+    background-color: transparent;
+}
