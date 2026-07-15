@@ -39,3 +39,42 @@ export const Navbar = ({title, subheading, handleChange, isChecked})=>{
         </nav>
     );
 }
+
+export const NavbarScroll = ({elements, handleScroll, isChecked, handleChange})=> {
+    const [val, setVal] = useState(isChecked);
+    return (
+        <nav>
+            <div className="logo">
+              <h3>
+                <a href="/">Zain-logo</a>
+              </h3>
+            </div>
+
+            <div className="Menu-options">
+              <div className="menu__theme">
+                <input type="checkbox"
+                className="toggle"
+                id="theme-toggle"
+                onChange={handleChange}
+                checked={isChecked}
+                />
+            <label htmlFor="theme-toggle">
+              {isChecked ? "Dark" : "Light"}
+            </label>
+              </div>
+                <h6><label htmlFor="dropdown-toggle">Menu</label>
+                  <input type="checkbox" id="dropdown-toggle"
+                  />
+                </h6>
+                <div className="dropdown">
+                  <ul>
+              {elements?.map((section) => (
+                <li key={`li-${section}`}><a
+                onClick={(el) => { handleScroll(section) }}>
+                {section}</a></li>))}
+                  </ul>
+                </div>
+            </div>
+        </nav>
+  );
+}

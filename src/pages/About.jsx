@@ -2,6 +2,7 @@ import  { ButtonBase } from "../components/ButtonBase";
 import { useToast } from "../hooks/useToast";
 import { GridText } from "../components/GridText";
 import { SliderCards } from "../utils/ImageSlider";
+
 export const About = (
   {id, heading, subheading}
 )=> {
@@ -86,10 +87,6 @@ export const About = (
       >
       </SliderCards>
 
-      <ButtonBase label="Download my CV"
-        className="success"
-      >
-      </ButtonBase>
       <ButtonBase
         label="Info"
         className="info"
