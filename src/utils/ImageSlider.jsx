@@ -27,15 +27,13 @@ export const SliderCards = ({ slides }) => {
             onClick={handlePrev}
             />
       {
-
         images.map((image, index)=>
             <div
-            key={`SliderCard${index}`}
+            key={`${image.id}-${index}-Slidercard`}
               className={ curSlide === index ? "current-image" : "hide-image"}
           >{
               image
             }</div>
-
         )
       }
       <FaArrowAltCircleRight className="arrow-right"
@@ -44,9 +42,9 @@ export const SliderCards = ({ slides }) => {
       </div>
       <div className="circle-indexes">
         { images && images.length ?
-          images.map((_,index) =>
+          images.map((image,index) =>
             <button
-              key={index}
+              key={`${image.id}-${index}-button`}
               className={ curSlide === index ? "index-indicator" : "index-indicator index-inactive"}
               onClick={()=> setCurSlide(index)}
             ></button>
@@ -55,8 +53,6 @@ export const SliderCards = ({ slides }) => {
       </div>
     </div>
   );
-
-
 }
 
 export const ImageSlider = ({url, limit}) => {

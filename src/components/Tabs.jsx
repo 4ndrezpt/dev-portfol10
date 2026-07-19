@@ -31,10 +31,12 @@ export const Tabs = ({ items, onChange }) =>
     <div className="tabs-content-container">
       <div className="tabs__item">
     {
-        items?.map((item, index)=> (
-          <>{selected === index && <item.content
-            key={item.id}
-          />}</>
+
+          items?.map((item, index) => (
+          <div>{selected === index && <item.content
+                  key={`Content-${item.id}`}
+              />}
+          </div>
         ))
     }
       </div>
@@ -44,6 +46,6 @@ export const Tabs = ({ items, onChange }) =>
 
 
 const TabView = ({id, index, active, item, onClick}) => {
-  return active ? <div key={`tabNav-${id}`}>{item.title}</div> :
-    <button key={`tabNav-${id}`} onClick={() => onClick(index, item)}>{item.title}</button>
+  return active ? <div key={`Div-${id}`}>{item.title}</div> :
+    <button key={`Btn-${id}`} onClick={() => onClick(index, item)}>{item.title}</button>
 }

@@ -6,7 +6,7 @@ import { StarBackground } from "../components/StarBackground";
 import { About } from "./About";
 import { Skills } from "../components/Skills";
 import { Projects } from "../components/Projects";
-import { Contact } from "../components/Contact";
+import { Contact } from "../pages/Contact";
 
 
 export const Home = ({ elements, scrollToSection, refs }) => {
@@ -21,26 +21,33 @@ export const Home = ({ elements, scrollToSection, refs }) => {
       <section
         key={"HOME"}
         ref={(el) => { itemsRef.current["HOME"] = el; }}
-        style={{ height: "|00%"}}>
+        style={{ height: "60vh"}}>
         <Hero
         ></Hero>
       </section>
       { /* ABOUT SECTION  */}
-      <section
-        key={"About"}
-        ref={(el) => { itemsRef.current["About"] = el; }}
-        style={{ height: "100%" }}>
-          <About id="#About"
-            heading="About Me"
-            subheading="Web developer and Tech Entusiast"
-          >
-          </About>
-      </section>
+        <section
+          key={"About"}
+          ref={(el) => { itemsRef.current["About"] = el; }}
+          style={{ height: "100%" }}>
+            <About id="#About"
+              heading="About Me"
+              subheading="Web developer and Tech Entusiast"
+            >
+        </About>
+        <div style={{ width: "200px",  marginTop: "21px", marginRight: "auto", marginLeft: "auto"}}>
+          <ButtonBase
+            className="warning"
+            style={{ backgroundColor : "steelblue"}}
+          >See my LinkedIn</ButtonBase>
+        </div>
+        </section>
+
       { /* SKILLS SECTION  */}
       <section
         key={"Skills"}
         ref={(el) => { itemsRef.current["Skills"] = el; }}
-        style={{ height: "70vh"}}>
+        style={{ height: "75vh"}}>
           <Skills
           ></Skills>
       </section>
@@ -48,16 +55,23 @@ export const Home = ({ elements, scrollToSection, refs }) => {
       <section
         key={"Projects"}
         ref={(el) => { itemsRef.current["Projects"] = el; }}
-        style={{ height: "70vh"}}>
-          <Projects></Projects>
+        style={{ height: "70vh" }}>
+        <Projects></Projects>
+        <div style={{ width: "200px", marginTop: "21px", marginRight: "auto", marginLeft: "auto"}}>
+          <ButtonBase
+            className="warning"
+            style={{ backgroundColor : "steelblue"}}
+          >See my GitHub Profile</ButtonBase>
+        </div>
       </section>
 
       { /* SKILLS SECTION  */}
       <section
         key={"Projects"}
         ref={(el) => { itemsRef.current["Contact"] = el; }}
-        style={{ height: "70vh"}}>
-          <Contact></Contact>
+        style={{ height: "62vh", marginTop: "55px"}}>
+        <Contact>
+        </Contact>
       </section>
     </main>);
 }

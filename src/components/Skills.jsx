@@ -2,58 +2,62 @@ import { Tabs } from "./Tabs";
 import { v4 as uuid } from "uuid";
 
   const skillItem = [
-    { name: "HTML/CSS", level: 100, category: "frontend" },
-    { name: "JavaScript", level: 90, category: "frontend" },
-    { name: "TypeScript", level: 90, category: "frontend" },
-    { name: "React", level: 85, category: "frontend" },
-    { name: "Vue", level: 75, category: "frontend" },
-    { name: "Angular", level: 75, category: "frontend" },
-    { name: "Next.Js", level: 90, category: "frontend" },
-    { name: "Sass", level: 95, category: "frontend" },
+    { id: uuid(), name: "HTML/CSS", level: 100, category: "frontend" },
+    { id: uuid(), name: "JavaScript", level: 90, category: "frontend" },
+    { id: uuid(), name: "TypeScript", level: 90, category: "frontend" },
+    { id: uuid(), name: "React", level: 85, category: "frontend" },
+    { id: uuid(), name: "Vue", level: 75, category: "frontend" },
+    { id: uuid(), name: "Angular", level: 75, category: "frontend" },
+    { id: uuid(), name: "Next.Js", level: 90, category: "frontend" },
+    { id: uuid(), name: "Sass", level: 95, category: "frontend" },
     //Backender
-    { name: "NodeJS", level: 85, category: "backender" },
-    { name: "Express", level: 80, category: "backender" },
-    { name: "PHP", level: 90, category: "backender" },
-    { name: "Python", level: 90, category: "backender" },
-    { name: "Spring", level: 75, category: "backender" },
+    { id: uuid(), name: "NodeJS", level: 85, category: "backender" },
+    { id: uuid(), name: "Express", level: 80, category: "backender" },
+    { id:  uuid(), name: "PHP", level: 90, category: "backender" },
+    { id:  uuid(), name: "Python", level: 90, category: "backender" },
+    { id:  uuid(), name: "Spring", level: 75, category: "backender" },
     //Database
-    { name: "MySQL/MariaDB", level: 90, category: "databases" },
-    { name: "PostgreSQL", level: 60, category: "databases" },
-    { name: "MongoDB", level: 80, category: "databases" },
-    { name: "GraphQL", level: 60, category: "databases" },
+    { id:  uuid(), name: "MySQL/MariaDB", level: 90, category: "databases" },
+    { id:  uuid(), name: "PostgreSQL", level: 60, category: "databases" },
+    { id:  uuid(), name: "MongoDB", level: 80, category: "databases" },
+    { id:  uuid(), name: "GraphQL", level: 60, category: "databases" },
     //Tools
-    { name: "Git/Git-Hub", level: 80, category: "tools" },
-    { name: "Docker", level: 60, category: "tools" },
-    { name: "Lunacy", level: 90, category: "tools" },
+    { id:  uuid(), name: "Git/Git-Hub", level: 80, category: "tools" },
+    { id:  uuid(), name: "Docker", level: 60, category: "tools" },
+    { id:  uuid(), name: "Postman", level: 60, category: "tools" },
+    { id:  uuid(), name: "Bash", level: 80, category: "tools" },
+    { id:  uuid(), name: "Lunacy", level: 90, category: "tools" },
   ]
 export const DisplayContent = ({ category }) =>
   {
     if(category !== "All") {
       const filtered = skillItem.filter((item) => item.category === category)
-      return <div key={`cst-${category}`} className="tab-content__grid">
-        {filtered.map((item, index) => <div key={`all-${index}`} >
-          <h6>{item.name}</h6>
-          <div style={{
-            width: item.level+"%",
-            height: ".62rem",
-            backgroundColor: "var(--main-color)",
-            borderRadius: "5px"
-          }}></div>
-          <p>{ item.level } %</p>
-        </div>)}
+      return <div key={ uuid() } className="tab-content__grid">
+              {filtered.map((item, index) =>
+                <div key={`${category}-${item.id}-${index}`} >
+                <h6>{item.name}</h6>
+                <div  style={{
+                  width: item.level+"%",
+                  height: ".62rem",
+                  backgroundColor: "var(--main-color)",
+                  borderRadius: "5px"
+                }}></div>
+                <p>{ item.level } %</p>
+              </div>)}
             </div>;
     } else {
-      return <div key={`cst-${category}`} className="tab-content__grid">
-        {skillItem.map((item, index) => <div key={`all-${index}`} >
-          <h6>{item.name}</h6>
-          <div style={{
-            width: item.level+"%",
-            height: ".62rem",
-            backgroundColor: "var(--main-color)",
-            borderRadius: "5px"
-          }}></div>
-          <p>{ item.level } %</p>
-        </div>)}
+      return <div key={ uuid() } className="tab-content__grid">
+            {skillItem.map((item, index) =>
+              <div key={`all-${item.id}-${index}`} >
+                <h6>{item.name}</h6>
+                <div style={{
+                  width: item.level+"%",
+                  height: ".62rem",
+                  backgroundColor: "var(--main-color)",
+                  borderRadius: "5px"
+                }}></div>
+              <p>{ item.level } %</p>
+            </div>)}
           </div>;
     }
   }
@@ -77,7 +81,7 @@ export const Skills = () => {
     },
     {
       id: uuid(),
-      title: "Database Management",
+      title: "Databases",
       content: ()=>contentJSX("databases")
     },
     {
@@ -90,13 +94,12 @@ export const Skills = () => {
 
     return <div className="Tab-content-container">
       <div className="header">
-        <h4>Content Tab</h4>
       </div>
       <div className="body">
-        <DisplayContent category={category}></DisplayContent>
+        <DisplayContent category={category}>
+        </DisplayContent>
       </div>
     </div>
-
   }
 
 
@@ -105,8 +108,9 @@ export const Skills = () => {
     //console.log(item.title);
   }
   return (<div>
-    <h2 style={{ textAlign: "center", paddingBottom: "21px"}}>Skills</h2>
+    <h2 style={{ textAlign: "center", paddingBottom: "21px", color:"var(--main-color)"}}>Skills</h2>
     <Tabs
+      key={"Tabs-Projects"}
       items={ defaultItems }
       onChange={handleChange}
     ></Tabs>

@@ -23,7 +23,7 @@ export const Hero = () => {
       padding: "55px 13px",
       alignItems: "center",
       justifyContent: "center",
-      color: "var(--lg-color)",
+      color: "azure",
     }}>
       <CardFull
         transparent={false}

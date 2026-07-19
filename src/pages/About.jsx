@@ -4,31 +4,35 @@ import { GridText } from "../components/GridText";
 import { SliderCards } from "../utils/ImageSlider";
 
 export const About = (
-  {id, heading, subheading}
+  {heading, subheading}
 )=> {
   const { addToast } = useToast();
   const skillsContent = [
     {
       title: "Web Development",
-      content: "Development of modern and responsive websites and Web applications with modern day technologies and freameworks"
+      content: "The internet is always moving forward. This means you will never get bored. You can learn new tricks like Flexbox to make layout designs easier. Every day is a new puzzle to solve. When you fix a bug or finish a feature, you get a great feeling of success",
+      from: "https://www.youtube.com/watch?v=wZoJBLjS6Tw"
     },
     {
       title: "Frontend Development",
-      content: "Development of modern and responsive websites and Web applications with modern day technologies and freameworks"
+      content: "Frontend developers make complex technology easy and fun to use. You ensure buttons click smoothly, pages load fast, and everyone—including people with disabilities—can enjoy the site. Your work directly shapes how the world experiences the internet",
+      from : "https://www.greatfrontend.com/blog/is-frontend-development-a-good-career"
     },
     {
       title: "Backend Development",
-      content: "Development of modern and responsive websites and Web applications with modern day technologies and freameworks"
+      content: "Backend development is one of the best fields for people who love solving logic puzzles. Every day presents a new, fun challenge. Whether it is finding out why a server runs slowly or designing a way to process thousands of orders in seconds, the work is exciting. It is like building a complex machine and watching it run perfectly.",
+      from: "https://dev.to/jpoly1219/why-i-decided-to-become-a-web-backend-developer-1817"
     },
     {
       title: "Full-Stack Management",
-      content: "Development of modern and responsive websites and Web applications with modern day technologies and freameworks"
+      content: "Full-stack developers act as digital architects. They connect the front-end (what users see and click) to the back-end (where data is stored and processed). Seeing an app work from start to finish brings a deep sense of satisfaction. It is like baking a cake and decorating it too; you control the whole creative process",
+      from: "https://www.youtube.com/watch?v=DPBjcbDJWHU"
     },
     {
-      title: "Contenarization and deployment",
-      content: "Development of modern and responsive websites and Web applications with modern day technologies and freameworks"
+      title: "Dockerization and Deployment",
+      content: "Before Docker, software would often break when it moved from a developer's computer to a live server. Docker solves this problem completely. It creates an identical environment for testing and production. This means less time fixing setup bugs and more time building great features",
+      from : "https://dev.to/meghasharmaaaa/-2966"
     }
-
   ]
   const CardInjector = Array.from({ length: 5 }, (_, index) => {
     return <div key={index + 1} className="card-slide-container">
@@ -36,8 +40,7 @@ export const About = (
           <h2>{   skillsContent[index]["title"]}</h2>
         </div>
         <div className="body">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero possimus nam cumque similique ratione totam! Eaque earum neque perspiciatis, blanditiis maxime aliquam impedit minima nobis perferendis suscipit a veritatis ab.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero possimus nam cumque similique ratione totam! Eaque earum neque perspiciatis, blanditiis maxime aliquam impedit minima nobis perferendis suscipit a veritatis ab.</p>
+          <p>{ skillsContent[index]["content"]}</p>
       </div>
       <div className="footer">
         <ButtonBase
@@ -49,10 +52,9 @@ export const About = (
   });
 
   return (
-    <main id={id ? id : "#About"} style={{ textAlign: "center"}}>
+    <main  style={{ textAlign: "center", color: "var(--main-color)"}}>
       <h2>{heading}</h2>
-      <h4>{subheading}
-
+      <h4 style={{ color: "orangered" }}>{subheading}
       </h4>
       <GridText
       >
@@ -70,14 +72,14 @@ export const About = (
           </p>
         </div>
         <div>
-          <h4>Some of my grades</h4>
+          <h4>Relevant Grades</h4>
           <ul>
            	<li>Software Analist and Developer (2025)</li>
            	<li>FullStack Foundations technician (2025)</li>
-           	<li>Nonde JS course (2026)</li>
+           	<li>Node JS course (2026)</li>
            	<li>ReactJs course (2026)</li>
            	<li>Cloud Computing Technician (2025)</li>
-           	<li>Webresponsive Designer (2026)</li>
+           	<li>Web responsive Designer (2026)</li>
            	<li>Git course (2025)</li>
           </ul>
         </div>
@@ -86,11 +88,5 @@ export const About = (
         slides={ CardInjector }
       >
       </SliderCards>
-
-      <ButtonBase
-        label="Info"
-        className="info"
-        onClick={()=>addToast("Information Toast", "Message Content for Information toast", "toast-info")}
-      ></ButtonBase>
     </main>);
 }

@@ -55,7 +55,6 @@ export const App = () => {
           elements={["HOME", "About", "Skills", "Projects", "Contact"]}></Home>}></Route>
         <Route path="/*" element={<NotFound></NotFound>}></Route>
       </Routes>
-
     </ToastProvider>
     <button key={`nav-${"Sky"}`}
       style={{
