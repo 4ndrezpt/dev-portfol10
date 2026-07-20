@@ -1,0 +1,41 @@
+.Contact-container {
+    width: 63%;
+    max-width: 900px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 55px;
+    padding: 21px 13px;
+    background: linear-gradient(slateblue, darkslateblue, #0a0a0a);
+    border-radius: 13px;
+    color: whitesmoke;
+
+    & .header {
+        margin: 34px;
+        & h2, h3, h4 {
+        text-align: center;
+        }
+        width: 100%;
+    }
+    & fieldset {
+        width: 90%;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 8px 13px;
+        border-radius: 8px;
+        margin-bottom: 13px;
+        &:focus-within {
+            background: linear-gradient(#343434, #0a0a0a);
+        }
+
+    }
+    & label {
+        margin-left: 5%;
+        display: block;
+    }
+    & input[type="text"],input[type="email"], textarea, button {
+        width: 90%;
+        margin-left: 5%;
+        margin-bottom: 13px;
+        padding: 5px 13px;
+    }
+}

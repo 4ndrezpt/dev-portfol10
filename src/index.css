@@ -253,10 +253,13 @@ nav {
     flex-direction: row;
     padding-left: 23px;
     padding-right: 23px;
+    width: 100%;
     height: 60px;
+    position: fixed;
     justify-content: space-between;
     background-color: var(--main-color);
     color: var(--lg-color);
+    z-index: 2;
     & label{
         cursor: pointer;
     }
@@ -498,8 +501,8 @@ footer {
     max-height: 150px;
     margin-top: auto;
     width: 100%;
-    position: fixed;
-    bottom: 30px;
+    position:relative;
+    bottom: -165px;
     display: flex;
     flex-direction: column;
     & .footer-horizon {
@@ -745,6 +748,8 @@ address {
 .crumbs-container {
     width: 100%;
     display: flex;
+    position: fixed;
+    top: 60px;
     background-color: var(--darkest-main-color);
     color: var(--main-light-3);
     padding: 5px 13px;

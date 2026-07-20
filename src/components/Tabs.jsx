@@ -19,7 +19,7 @@ export const Tabs = ({ items, onChange }) =>
     {
         items?.map((item, index) => (
           <TabView
-            id={`tabNav-${index}`}
+            key={`TabView-${index}`}
             index={index}
             active={index === selected}
             item={ item }
@@ -31,10 +31,9 @@ export const Tabs = ({ items, onChange }) =>
     <div className="tabs-content-container">
       <div className="tabs__item">
     {
-
           items?.map((item, index) => (
           <div>{selected === index && <item.content
-                  key={`Content-${item.id}`}
+                  key={item.id}
               />}
           </div>
         ))
@@ -44,8 +43,7 @@ export const Tabs = ({ items, onChange }) =>
   </div>);
 }
 
-
-const TabView = ({id, index, active, item, onClick}) => {
-  return active ? <div key={`Div-${id}`}>{item.title}</div> :
-    <button key={`Btn-${id}`} onClick={() => onClick(index, item)}>{item.title}</button>
+const TabView = ({ index, active, item, onClick}) => {
+  return active ? <div>{item.title}</div> :
+    <button onClick={() => onClick(index, item)}>{item.title}</button>
 }

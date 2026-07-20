@@ -21,7 +21,7 @@ export const Home = ({ elements, scrollToSection, refs }) => {
       <section
         key={"HOME"}
         ref={(el) => { itemsRef.current["HOME"] = el; }}
-        style={{ height: "60vh"}}>
+        style={{ height: "40vh"}}>
         <Hero
         ></Hero>
       </section>
@@ -47,7 +47,7 @@ export const Home = ({ elements, scrollToSection, refs }) => {
       <section
         key={"Skills"}
         ref={(el) => { itemsRef.current["Skills"] = el; }}
-        style={{ height: "75vh"}}>
+        style={{ height: "70vh"}}>
           <Skills
           ></Skills>
       </section>
@@ -55,7 +55,7 @@ export const Home = ({ elements, scrollToSection, refs }) => {
       <section
         key={"Projects"}
         ref={(el) => { itemsRef.current["Projects"] = el; }}
-        style={{ height: "70vh" }}>
+        style={{ height: "70vh", marginTop: "50px"}}>
         <Projects></Projects>
         <div style={{ width: "200px", marginTop: "21px", marginRight: "auto", marginLeft: "auto"}}>
           <ButtonBase
@@ -67,9 +67,9 @@ export const Home = ({ elements, scrollToSection, refs }) => {
 
       { /* SKILLS SECTION  */}
       <section
-        key={"Projects"}
+        key={"Contact"}
         ref={(el) => { itemsRef.current["Contact"] = el; }}
-        style={{ height: "62vh", marginTop: "55px"}}>
+        style={{ height: "62vh", margin: "55px 0"}}>
         <Contact>
         </Contact>
       </section>

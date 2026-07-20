@@ -7,48 +7,48 @@ export const Projects = () => {
       {
         id: uuid(),
         title: "Vue-Todo-App",
-        banner: "/assets/images/placeholder.svg",
+        banner: "/assets/images/vue-todo-app.jpg",
         content: "Development of modern and responsive websites and Web applications with modern day technologies and freameworks",
         tags: ["Vue", "JavaScript","Vite", "CSS"],
-        gitHub: "",
-        preview: ""
+        gitHub: "https://github.com/4ndrezpt/Vue---todo-app",
+        preview: "https://luxury-froyo-c94c19.netlify.app/"
       },
       {
         id: uuid(),
-        title: "React-Expenses-Tracker",
-        banner: "../assets/images/placeholder.svg",
+        title: "Expenses-Tracker",
+        banner: "../assets/images/budget-app.jpg",
         content: "Development of modern and responsive websites and Web applications with modern day technologies and freameworks",
         tags: ["React", "JavaScript","Vite", "CSS"],
-        gitHub: "",
-        preview: ""
+        gitHub: "https://github.com/4ndrezpt/Budget-App-React",
+        preview: "https://animated-narwhal-24b605.netlify.app/"
       },
       {
         id: uuid(),
-        title: "React-Weather-App",
-        banner: "/assets/images/placeholder.svg",
+        title: "Weather-App",
+        banner: "/assets/images/weather-app.jpg",
         content: "Development of modern and responsive websites and Web applications with modern day technologies and freameworks",
-        tags: ["React", "JavaScript","Vite", "CSS"],
-        gitHub: "",
-        preview: ""
+        tags: ["React", "JavaScript","Vite", "CSS", "API-call"],
+        gitHub: "https://github.com/4ndrezpt/weather-app-react",
+        preview: "https://animated-genie-171977.netlify.app/"
       },
       {
         id: uuid(),
-        title: "Node-Color-Palettes",
-        banner: "/assets/images/placeholder.svg",
+        title: "Color-Palettes",
+        banner: "/assets/images/node-palettes1.jpg",
         content: "Development of modern and responsive websites and Web applications with modern day technologies and freameworks",
-        tags: ["Node", "TypeScript", "CSS"],
-        gitHub: "",
-        preview: ""
+        tags: ["Node", "Express", "TypeScript", "CSS"],
+        gitHub: "https://github.com/4ndrezpt/node-Ts-color-palettes",
+        preview: "https://node-ts-color-palettes.onrender.com/"
 
       },
       {
         id: uuid(),
         title: "Task filter App",
-        banner: "/assets/images/placeholder.svg",
+        banner: "/assets/images/filter-tasks.jpg",
         content: "Development of modern and responsive websites and Web applications with modern day technologies and freameworks",
         tags: ["React", "TypeScript", "Vite", "CSS"],
-        gitHub: "",
-        preview: ""
+        gitHub: "https://github.com/4ndrezpt/Todo-app-with-ts",
+        preview: "https://beautiful-souffle-3f3d72.netlify.app/"
       }
     ]
     const CardInjector = Array.from({ length: 5 }, (_, index) => {
@@ -69,11 +69,14 @@ export const Projects = () => {
             <ButtonBase
               className="info"
               label="GitHub"
-            ></ButtonBase>
+            ><a href={projectsContent[index]["gitHub"]}
+                target="_blank"
+            >Repository Code</a></ButtonBase>
             <ButtonBase
               className="info"
-              label="View Project"
-            ></ButtonBase>
+            ><a href={projectsContent[index]["preview"]}
+                target="_blank"
+            >preview</a></ButtonBase>
           </div>
         </div>
          </div>

@@ -29,7 +29,7 @@ import { v4 as uuid } from "uuid";
     { id:  uuid(), name: "Lunacy", level: 90, category: "tools" },
   ]
 export const DisplayContent = ({ category }) =>
-  {
+{
     if(category !== "All") {
       const filtered = skillItem.filter((item) => item.category === category)
       return <div key={ uuid() } className="tab-content__grid">
@@ -110,7 +110,6 @@ export const Skills = () => {
   return (<div>
     <h2 style={{ textAlign: "center", paddingBottom: "21px", color:"var(--main-color)"}}>Skills</h2>
     <Tabs
-      key={"Tabs-Projects"}
       items={ defaultItems }
       onChange={handleChange}
     ></Tabs>
