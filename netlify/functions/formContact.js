@@ -4,15 +4,17 @@ import * as nodemailer from "nodemailer";
 
 dotenv.config();
 
+
 const transport = nodemailer.createTransport({
-  host: process.env.EMAIL_HOST,
-  port: process.env.EMAIL_PORT,
-  secure: true,
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASSWORD
-  },
-})
+    host: process.env.EMAIL_HOST,
+    port: process.env.EMAIL_PORT,
+    secure: true,
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASSWORD
+    },
+  });
+
 
 const sendEmail = (mail, headers) => {
   return new Promise((resolve, reject) => {
@@ -21,12 +23,10 @@ const sendEmail = (mail, headers) => {
         error ?
           reject({
             statusCode: 500,
-            headers,
             body: error
           })
           : resolve({
             statusCode: 200,
-            headers,
             body: "Email Successfully sended to" + mail.to,
           })
       })
@@ -56,13 +56,12 @@ export const handler = async (event, context) => {
         from: process.env.EMAIL_USER,
         to: "medstrings6@gmail.com",
         subject: "Contacto - " + data.subject,
-        html: generateBodyMsg(data)
-      }, headers);
+        text: generateBodyMsg(data)
+      });
 
     default:
       return {
         statusCode: 405,
-        headers,
         message: "Not supported Method"
       }
   }
