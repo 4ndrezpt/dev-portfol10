@@ -39,7 +39,6 @@ export const Projects = () => {
         tags: ["Node", "Express", "TypeScript", "CSS"],
         gitHub: "https://github.com/4ndrezpt/node-Ts-color-palettes",
         preview: "https://node-ts-color-palettes.onrender.com/"
-
       },
       {
         id: uuid(),
