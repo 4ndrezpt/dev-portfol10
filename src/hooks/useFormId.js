@@ -96,6 +96,9 @@ export const useFormId = (initialForm = {}, onSubmit) => {
       {
         method: "POST",
         headers: {
+          'Access-Control-Allow-Origin': "*",
+          'Access-Control-Allow-Headers': "Content-Type, Authorization",
+          'Access-Control-Allow-Methods': "POST",
           "Content-Type":"application/json"
         },
         body: JSON.stringify(simplified)
