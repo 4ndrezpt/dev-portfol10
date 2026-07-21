@@ -16,7 +16,7 @@ const transport = nodemailer.createTransport({
 
 const sendEmail = (mail, headers) => {
   return new Promise((resolve, reject) => {
-    transport.sendEmail(mail,
+    transport.sendMail(mail,
       (error, _) => {
         error ?
           reject({
