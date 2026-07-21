@@ -92,7 +92,6 @@ export const useFormId = (initialForm = {}, onSubmit) => {
       title: form["title"].value,
       subject: form["subject"].value,
     }
-    console.log("We expecting to send an email from here", form)
     const response = await fetch("/.netlify/functions/formContact",
       {
         method: "POST",
@@ -100,8 +99,10 @@ export const useFormId = (initialForm = {}, onSubmit) => {
           "Content-Type":"application/json"
         },
         body: JSON.stringify(simplified)
-      }
-    )
+      })
+    .then(()=> console.log("Message correctly sended"))
+    .catch(error => console.error("Error sending message", error))
+    console.log("We expecting to send an email from here", simplified)
   }
 
   return {

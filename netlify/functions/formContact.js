@@ -1,7 +1,7 @@
 exports.handler = async (event, context) => {
   switch (event.httpMethod) {
     case "POST":
-      const params = JSON.parse(event.body);
+      const data = JSON.parse(event.body);
       console.log("Recibí una sollicitud, params");
       //
       return;
