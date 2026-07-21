@@ -1,6 +1,6 @@
 import process from "process";
-const { config } = require("dotenv");
-config();
+require("dotenv").config();
+
 
 const nodemailer = require("nodemailer");
 
@@ -14,17 +14,19 @@ const transport = nodemailer.createTransport({
   },
 })
 
-const sendEmail = (mail) => {
+const sendEmail = (mail, headers) => {
   return new Promise((resolve, reject) => {
     transport.sendEmail(mail,
       (error, _) => {
         error ?
           reject({
             statusCode: 500,
+            headers,
             body: error
           })
           : resolve({
             statusCode: 200,
+            headers,
             body: "Email Successfully sended to" + mail.to,
           })
       })
@@ -55,13 +57,13 @@ export const handler = async (event, context) => {
         to: "medstrings6@gmail.com",
         subject: "Contacto - " + data.subject,
         html: generateBodyMsg(data)
-      });
-      //
-      return;
+      }, headers);
+
     default:
       return {
-      statusCode: 405,
-      message: "Not supported Method"
+        statusCode: 405,
+        headers,
+        message: "Not supported Method"
       }
   }
 }
