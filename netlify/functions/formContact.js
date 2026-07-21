@@ -1,4 +1,6 @@
-exports.handler = async (event, context) => {
+import process from "process";
+
+export const handler =  async (event, context) => {
   switch (event.httpMethod) {
     case "POST":
       const data = JSON.parse(event.body);
