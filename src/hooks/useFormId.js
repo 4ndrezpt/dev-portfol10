@@ -83,8 +83,25 @@ export const useFormId = (initialForm = {}, onSubmit) => {
     }
     return valid;
   }
-  const sendEmail = (form) => {
-    console.log(form)
+  const sendEmail = async (form) => {
+
+    const simplified = {
+      id: form["id"].value,
+      name: form["name"].value,
+      email: form["email"].value,
+      title: form["title"].value,
+      subject: form["subject"].value,
+    }
+    console.log("We expecting to send an email from here", form)
+    const response = await fetch("/.netlify/functions/formContact",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type":"application/json"
+        },
+        body: JSON.stringify(simplified)
+      }
+    )
   }
 
   return {

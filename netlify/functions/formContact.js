@@ -9,6 +9,6 @@ exports.handler = async (event, context) => {
       return {
       statusCode: 405,
       message: "Not supported Method"
-  }
+      }
   }
 }
