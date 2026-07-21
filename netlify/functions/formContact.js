@@ -1,5 +1,7 @@
 import process from "process";
-require("dotenv").config();
+import * as dotenv from "dotenv";
+
+dotenv.config();
 
 
 const nodemailer = require("nodemailer");
