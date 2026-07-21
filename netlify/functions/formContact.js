@@ -4,7 +4,7 @@ import * as nodemailer from "nodemailer";
 
 dotenv.config();
 
-
+/*
 const transport = nodemailer.createTransport({
     host: process.env.EMAIL_HOST,
     port: process.env.EMAIL_PORT,
@@ -15,8 +15,7 @@ const transport = nodemailer.createTransport({
     },
   });
 
-
-const sendEmail = (mail, headers) => {
+  const sendEmail = (mail, headers) => {
   return new Promise((resolve, reject) => {
     transport.sendMail(mail,
       (error, _) => {
@@ -32,14 +31,12 @@ const sendEmail = (mail, headers) => {
       })
   });
 }
-
 const generateBodyMsg = (params) => {
   return `Formulario de contacto enviado por ${params.name} - ${params.email}.
   con el tema: ${params.title} y el siguiente mensaje:
     ${params.subject}
   `;
 }
-
 export const handler = async (event, context) => {
   const headers = {
     'Access-Control-Allow-Origin': "*",
@@ -65,4 +62,43 @@ export const handler = async (event, context) => {
         message: "Not supported Method"
       }
   }
+}
+*/
+
+export const handler = async (event, context) => {
+  if (event.httpMethod !== "POST") {
+      return { statusCode: 405, body: "Method Not Allowed" };
+    }
+
+    try {
+      const transporter = nodemailer.createTransport({
+        service: 'gmail', // or your provider
+        port: process.env.EMAIL_PORT,
+        auth: {
+          user: process.env.EMAIL_USER,
+          pass: process.env.EMAIL_PASSWORD, // Use an App Password for Gmail, not your login password
+        },
+      });
+
+      const body = JSON.parse(event.body);
+
+      // You MUST await this call so the function doesn't close early
+      await transporter.sendMail({
+        from: process.env.EMAIL_USER,
+        to: "medstrings6@gmail.com",
+        subject: body.title,
+        text: body.name +"send "+body.email+" "+body.subject,
+      });
+
+      return {
+        statusCode: 200,
+        body: JSON.stringify({ message: "Email sent successfully!" }),
+      };
+    } catch (error) {
+      console.error("Detailed Error:", JSON.stringify(error, null, 2));
+      return {
+        statusCode: 500,
+        body: JSON.stringify({ error: error.message }),
+      };
+    }
 }
