@@ -7,19 +7,20 @@ export const Projects = () => {
     {
       id: uuid(),
       title: "Java Cashier Desktop",
-      banner: "/assets/images/vue-todo-app.jpg",
+      banner: "/assets/images/java_desktop.png",
       content: "Development of modern and responsive websites and Web applications with modern day technologies and freameworks",
       tags: ["Java", "MySQL"],
-      gitHub: "https://github.com/4ndrezpt/Vue---todo-app"
+      gitHub: "https://github.com/4ndrezpt/CashierDesktop",
+      preview: "Not allowed"
     },
     {
       id: uuid(),
       title: "E-commerce",
-      banner: "/assets/images/vue-todo-app.jpg",
+      banner: "/assets/images/e-commerce_rcjs.png",
       content: "Development of modern and responsive websites and Web applications with modern day technologies and freameworks",
-      tags: ["React", "TypeScript","Vite", "CSS"],
-      gitHub: "https://github.com/4ndrezpt/Vue---todo-app",
-      preview: "https://luxury-froyo-c94c19.netlify.app/"
+      tags: ["React", "Javascript","Vite", "API-products", "CSS"],
+      gitHub: "https://github.com/4ndrezpt/reactjs-routing-jam.git",
+      preview: "Not allowed"
     },
       {
         id: uuid(),
@@ -79,7 +80,7 @@ export const Projects = () => {
               <ul>{projectsContent[index]["tags"].map((item, index) => <li
                 key={`${projectsContent[index]["id"]}-tag-${index + 1}`}>{item}</li>)}</ul>
             </div>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero possimus nam cumque similique ratione totam! Eaque earum neque perspiciatis, blanditiis maxime aliquam impedit minima nobis perferendis suscipit a veritatis ab.</p>
+            <p>{ projectsContent[index]["content"] }</p>
           </div>
           <div className="footer">
             <ButtonBase
