@@ -654,6 +654,13 @@ address {
 .warning {
     background-color: var(--alert);
     color: var(--blk-color);
+    & a {
+        color: black;
+        text-decoration: none;
+    }
+    &:hover {
+        font-weight: bolder;
+    }
 }
 .danger {
     background-color: var(--danger);

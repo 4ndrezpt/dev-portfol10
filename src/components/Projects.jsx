@@ -3,7 +3,24 @@ import { SliderCards } from "../utils/ImageSlider";
 import { v4 as uuid } from "uuid";
 
 export const Projects = () => {
-    const projectsContent = [
+  const projectsContent = [
+    {
+      id: uuid(),
+      title: "Java Cashier Desktop",
+      banner: "/assets/images/vue-todo-app.jpg",
+      content: "Development of modern and responsive websites and Web applications with modern day technologies and freameworks",
+      tags: ["Java", "MySQL"],
+      gitHub: "https://github.com/4ndrezpt/Vue---todo-app"
+    },
+    {
+      id: uuid(),
+      title: "E-commerce",
+      banner: "/assets/images/vue-todo-app.jpg",
+      content: "Development of modern and responsive websites and Web applications with modern day technologies and freameworks",
+      tags: ["React", "TypeScript","Vite", "CSS"],
+      gitHub: "https://github.com/4ndrezpt/Vue---todo-app",
+      preview: "https://luxury-froyo-c94c19.netlify.app/"
+    },
       {
         id: uuid(),
         title: "Vue-Todo-App",
@@ -50,7 +67,7 @@ export const Projects = () => {
         preview: "https://beautiful-souffle-3f3d72.netlify.app/"
       }
     ]
-    const CardInjector = Array.from({ length: 5 }, (_, index) => {
+    const CardInjector = Array.from({ length: projectsContent.length }, (_, index) => {
       return <div key={projectsContent[index]["id"]} className="featured-slide-container">
         <div className="header">
           <img src={projectsContent[index]["banner"]} alt=""/>

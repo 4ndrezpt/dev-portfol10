@@ -21,9 +21,16 @@ export const Home = ({ elements, scrollToSection, refs }) => {
       <section
         key={"HOME"}
         ref={(el) => { itemsRef.current["HOME"] = el; }}
-        style={{ height: "40vh"}}>
+        style={{ height: "50vh"}}>
         <Hero
         ></Hero>
+        <div style={{ width: "200px",  marginTop: "21px", marginRight: "auto", marginLeft: "auto"}}>
+        <ButtonBase
+          className="warning"
+        >
+          <a href="#Projects">View my work</a>
+          </ButtonBase>
+        </div>
       </section>
       { /* ABOUT SECTION  */}
         <section
@@ -39,7 +46,7 @@ export const Home = ({ elements, scrollToSection, refs }) => {
           <ButtonBase
             className="warning"
             style={{ backgroundColor : "steelblue"}}
-          >See my LinkedIn</ButtonBase>
+          ><a href="https://www.linkedin.com/in/andres-zapata-d3v3loper/" target="_blank">See My LinkedIn</a></ButtonBase>
         </div>
         </section>
 
@@ -61,7 +68,10 @@ export const Home = ({ elements, scrollToSection, refs }) => {
           <ButtonBase
             className="warning"
             style={{ backgroundColor : "steelblue"}}
-          >See my GitHub Profile</ButtonBase>
+          ><a href="https://github.com/4ndrezpt" target="_blank">
+              See my GitHub Profile
+            </a>
+            </ButtonBase>
         </div>
       </section>
 

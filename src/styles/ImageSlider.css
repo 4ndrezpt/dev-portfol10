@@ -10,7 +10,8 @@
     margin: 0;
     position: relative;
     & img {
-        min-width: 450px;
+        min-width: 600px;
+        object-fit: contain;
     }
 }
 .hide-image {

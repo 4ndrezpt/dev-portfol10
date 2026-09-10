@@ -7,7 +7,6 @@ export const Hero = () => {
   const [transparent, setTransparent] = useState(!isDark);
 
 
-
   useEffect(() => {
     let thisTheme = JSON.parse(localStorage.getItem("data-theme"));
   console.log(thisTheme);
@@ -31,11 +30,6 @@ export const Hero = () => {
         <h1>Hi, I'm <span>Andres Zapata</span></h1>
         <h3> A <span>Full-Stack Software Developer</span></h3>
         <p>I'm passionate to build solutions with modern Web technologies, to bring to reality solutions</p>
-        <ButtonBase
-          className="warning"
-        >
-          <a href="#Projects">View my work</a>
-        </ButtonBase>
       </CardFull>
     </main>
   );

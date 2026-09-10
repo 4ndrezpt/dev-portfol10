@@ -67,8 +67,8 @@ export const About = (
         <div>
           <h4>Mision</h4>
           <p>
-            I'm passionate for develop solutions with modern technologies and components, specially
-            based on Web technologies
+            I'm passionate for designing, developing and mantaining solutions with modern technologies and components, specially
+            focused on Web technologies
           </p>
         </div>
         <div>

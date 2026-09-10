@@ -7,6 +7,7 @@ import { v4 as uuid } from "uuid";
     { id: uuid(), name: "TypeScript", level: 90, category: "frontend" },
     { id: uuid(), name: "React", level: 85, category: "frontend" },
     { id: uuid(), name: "Vue", level: 75, category: "frontend" },
+    { id: uuid(), name: "D3JS", level: 70, category: "frontend" },
     { id: uuid(), name: "Angular", level: 75, category: "frontend" },
     { id: uuid(), name: "Next.Js", level: 90, category: "frontend" },
     { id: uuid(), name: "Sass", level: 95, category: "frontend" },
@@ -23,10 +24,15 @@ import { v4 as uuid } from "uuid";
     { id:  uuid(), name: "GraphQL", level: 60, category: "databases" },
     //Tools
     { id:  uuid(), name: "Git/Git-Hub", level: 80, category: "tools" },
-    { id:  uuid(), name: "Docker", level: 60, category: "tools" },
+    { id: uuid(), name: "Docker", level: 60, category: "tools" },
+    { id: uuid(), name: "Netbeans", level: 80, category: "tools" },
+    { id:uuid(), name: "Zed-editor", level: 75, category: "tools"},
     { id:  uuid(), name: "Postman", level: 60, category: "tools" },
     { id:  uuid(), name: "Bash", level: 80, category: "tools" },
-    { id:  uuid(), name: "Lunacy", level: 90, category: "tools" },
+    { id: uuid(), name: "Lunacy 'UI-design'", level: 90, category: "tools" },
+    { id: uuid(), name: "Spanish", level: 95, category: "languages" },
+    { id: uuid(), name: "English", level: 75, category: "languages" },
+    { id: uuid(), name: "Portuguese", level: 60, category: "languages" },
   ]
 export const DisplayContent = ({ category }) =>
 {
@@ -88,6 +94,11 @@ export const Skills = () => {
       id: uuid(),
       title: "Tools",
       content: ()=>contentJSX("tools")
+    },
+    {
+      id: uuid(),
+      title: "Languages",
+      content: ()=>contentJSX("languages")
     }
   ]
   function contentJSX(category) {
