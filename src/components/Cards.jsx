@@ -24,10 +24,14 @@ export const CardY = ({item}) => {
 export const CardFull = ({ transparent = false , children}) => {
   return (<div className="CardFull-container"
     style={{
-      backgroundColor: transparent ? "transparent" : "#1b1c36"
+      backgroundColor: transparent ? "transparent" : "#1b1c36",
+      color: "#fafafa",
+      textAlign: "left"
     }}
   >
+    <div style={{ textAlign: "left"}}>
     { children ? children : null }
+    </div>
 
   </div>)
 }

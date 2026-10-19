@@ -204,14 +204,6 @@ html {
     color-scheme: dark light;
     background-color: #0a0a0a;
 }
-h1{font-size: var(--h1-par); letter-spacing: var(--h1-lh)/1.25rem; text-align: center;}
-h2{font-size: var(--h2-par)}
-h3{font-size: var(--h3-par)}
-h4{font-size: var(--h4-par)}
-h5{font-size: var(--h5-par)}
-h6{font-size: var(--h6-par)}
-p,a,button,ul,li {font-size: var(--paragraph)}
-
 body {
     background-color: transparent;
     color: var(--fg-color);
@@ -222,6 +214,7 @@ body {
     flex-wrap: nowrap;
     z-index: 0;
     overflow-y: scroll;
+    line-height: 1.6rem;
     font-family:
     system-ui,
     -apple-system,
@@ -235,6 +228,16 @@ body {
     "Helvetica Neue",
     sans-serif;
 }
+h1,h2,h3, h4 {
+    line-height: 2.6rem;
+}
+h1{font-size: var(--h1-par); letter-spacing: var(--h1-lh)/1.25rem; text-align: center;}
+h2{font-size: var(--h2-par)}
+h3{font-size: var(--h3-par)}
+h4{font-size: var(--h4-par)}
+h5{font-size: var(--h5-par)}
+h6{font-size: var(--h6-par)}
+p,a,button,ul,li {font-size: var(--paragraph)}
 .App {
     width: 100%;
     max-width: 100%;
@@ -242,7 +245,6 @@ body {
     background-color: transparent;
     color: var(--fg-color);
     flex-direction: column;
-    overflow-y: scroll;
     overflow-x: hidden;
     padding-bottom: 174px;
     z-index: -1;

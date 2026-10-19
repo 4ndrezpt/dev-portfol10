@@ -9,6 +9,11 @@ export const About = (
   const { addToast } = useToast();
   const skillsContent = [
     {
+      title: "Full-Stack Development",
+      content: "The internet is always moving forward. This means you will never get bored. You can learn new tricks like Flexbox to make layout designs easier. Every day is a new puzzle to solve. When you fix a bug or finish a feature, you get a great feeling of success",
+      from: "https://www.youtube.com/watch?v=wZoJBLjS6Tw"
+    },
+    {
       title: "Web Development",
       content: "The internet is always moving forward. This means you will never get bored. You can learn new tricks like Flexbox to make layout designs easier. Every day is a new puzzle to solve. When you fix a bug or finish a feature, you get a great feeling of success",
       from: "https://www.youtube.com/watch?v=wZoJBLjS6Tw"
@@ -24,17 +29,22 @@ export const About = (
       from: "https://dev.to/jpoly1219/why-i-decided-to-become-a-web-backend-developer-1817"
     },
     {
-      title: "Full-Stack Management",
+      title: "Database Design & implementation",
       content: "Full-stack developers act as digital architects. They connect the front-end (what users see and click) to the back-end (where data is stored and processed). Seeing an app work from start to finish brings a deep sense of satisfaction. It is like baking a cake and decorating it too; you control the whole creative process",
       from: "https://www.youtube.com/watch?v=DPBjcbDJWHU"
     },
     {
-      title: "Dockerization and Deployment",
+      title: "Testing",
       content: "Before Docker, software would often break when it moved from a developer's computer to a live server. Docker solves this problem completely. It creates an identical environment for testing and production. This means less time fixing setup bugs and more time building great features",
       from : "https://dev.to/meghasharmaaaa/-2966"
-    }
+    },
+    {
+      title: "Deployment",
+      content: "The internet is always moving forward. This means you will never get bored. You can learn new tricks like Flexbox to make layout designs easier. Every day is a new puzzle to solve. When you fix a bug or finish a feature, you get a great feeling of success",
+      from: "https://www.youtube.com/watch?v=wZoJBLjS6Tw"
+    },
   ]
-  const CardInjector = Array.from({ length: 5 }, (_, index) => {
+  const CardInjector = Array.from({ length: skillsContent.length }, (_, index) => {
     return <div key={index + 1} className="card-slide-container">
         <div className="header">
           <h2>{   skillsContent[index]["title"]}</h2>
@@ -52,7 +62,7 @@ export const About = (
   });
 
   return (
-    <main  style={{ textAlign: "center", color: "var(--main-color)"}}>
+    <main style={{ textAlign: "center", color: "var(--main-color)" }}>
       <h2>{heading}</h2>
       <h4 style={{ color: "orangered" }}>{subheading}
       </h4>
@@ -60,8 +70,8 @@ export const About = (
       >
         <div>
           <h4>Trajectory</h4>
-          <p>I've been working in developing software since 5 years ago, When my first aproach to
-            software was Java language,
+          <p>I've been working in developing software since 5 years ago, Some of my core languages are
+            Javascript for frontednd and backend as well ,Python, Java.
           </p>
         </div>
         <div>
@@ -84,6 +94,7 @@ export const About = (
           </ul>
         </div>
       </GridText>
+      <h2>Services</h2>
       <SliderCards
         slides={ CardInjector }
       >

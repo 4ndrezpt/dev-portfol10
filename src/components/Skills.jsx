@@ -30,9 +30,9 @@ import { v4 as uuid } from "uuid";
     { id:  uuid(), name: "Postman", level: 60, category: "tools" },
     { id:  uuid(), name: "Bash", level: 80, category: "tools" },
     { id: uuid(), name: "Lunacy 'UI-design'", level: 90, category: "tools" },
-    { id: uuid(), name: "Spanish", level: 95, category: "languages" },
-    { id: uuid(), name: "English", level: 75, category: "languages" },
-    { id: uuid(), name: "Portuguese", level: 60, category: "languages" },
+    { id: uuid(), name: "Spanish", level: 'Native', category: "languages" },
+    { id: uuid(), name: "English", level: 'B1', category: "languages" },
+    { id: uuid(), name: "Portuguese", level: 'A1', category: "languages" },
   ]
 export const DisplayContent = ({ category }) =>
 {
@@ -41,14 +41,16 @@ export const DisplayContent = ({ category }) =>
       return <div key={ uuid() } className="tab-content__grid">
               {filtered.map((item, index) =>
                 <div key={`${category}-${item.id}-${index}`} >
-                <h6>{item.name}</h6>
-                <div  style={{
-                  width: item.level+"%",
-                  height: ".62rem",
-                  backgroundColor: "var(--main-color)",
-                  borderRadius: "5px"
-                }}></div>
-                <p>{ item.level } %</p>
+                  <h6>{item.name}</h6>
+                  { item.category !== "languages" ? <div><div  style={{
+                    width: item.level+"%",
+                    height: ".62rem",
+                    backgroundColor: "var(--main-color)",
+                    borderRadius: "5px",
+                  }}></div><p>{item.level} %</p></div>
+                    : <div><hr/><h4>{item.level}</h4></div>}
+
+
               </div>)}
             </div>;
     } else {

@@ -33,7 +33,7 @@ export const Projects = () => {
       },
       {
         id: uuid(),
-        title: "Expenses-Tracker",
+        title: "Expense-Tracker",
         banner: "../assets/images/budget-app.jpg",
         content: "Development of modern and responsive websites and Web applications with modern day technologies and freameworks",
         tags: ["React", "JavaScript","Vite", "CSS"],

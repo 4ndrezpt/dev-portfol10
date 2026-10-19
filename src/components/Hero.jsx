@@ -22,14 +22,20 @@ export const Hero = () => {
       padding: "55px 13px",
       alignItems: "center",
       justifyContent: "center",
-      color: "azure",
+      color: "azure"
     }}>
       <CardFull
         transparent={false}
       >
+        <div style={{ color: "#dadada"}}>
         <h1>Hi, I'm <span>Andres Zapata</span></h1>
-        <h3> A <span>Full-Stack Software Developer</span></h3>
-        <p>I'm passionate to build solutions with modern Web technologies, to bring to reality solutions</p>
+        <h3> A <span>Software Developer</span> focused on Web development</h3>
+          <p>I'm passionate to bring <strong>solutions</strong> that transform your
+            business presence with modern Web <strong>technologies</strong>,
+            by designing, building and maintaining <strong>applications</strong> with quality testing and
+            modern deployment techniques and methodologies.You can check out some of my projects down below.
+          </p>
+        </div>
       </CardFull>
     </main>
   );
