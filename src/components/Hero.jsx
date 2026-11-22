@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { ButtonBase } from "./ButtonBase";
-import { CardFull } from "./Cards";
+import { CardFull, CardProfile } from "./Cards";
 
 export const Hero = () => {
   let isDark = JSON.parse(localStorage.getItem("data-theme"));
@@ -27,14 +27,9 @@ export const Hero = () => {
       <CardFull
         transparent={false}
       >
-        <div style={{ color: "#dadada"}}>
-        <h1>Hi, I'm <span>Andres Zapata</span></h1>
-        <h3> A <span>Software Developer</span> focused on Web development</h3>
-          <p>I'm passionate to bring <strong>solutions</strong> that transform your
-            business presence with modern Web <strong>technologies</strong>,
-            by designing, building and maintaining <strong>applications</strong> with quality testing and
-            modern deployment techniques and methodologies.You can check out some of my projects down below.
-          </p>
+        <div className="Hero-hook" style={{ color: "#dadada"}}>
+          <h1>Hi, I'm <span>Andres Zapata</span></h1>
+          <h3> A <span>Full-Stack Software Developer</span> focused on bring, matain, and improve solutions throught the Web</h3>
         </div>
       </CardFull>
     </main>

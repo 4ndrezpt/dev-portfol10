@@ -35,3 +35,21 @@ export const CardFull = ({ transparent = false , children}) => {
 
   </div>)
 }
+
+export const CardProfile = ({ transparent = false, imageUrl, children }) => {
+  return (<div className="CardFullProfile-container"
+    style={{
+      backgroundColor: transparent ? "transparent" : "#1b1c36",
+      color: "#fafafa",
+      textAlign: "left"
+    }}
+  >
+    <div style={{ textAlign: "left" }}>
+    { children ? children : null }
+    </div>
+      <div className="imageProfile">
+        <img src={imageUrl} alt="profile-picture"/>
+      </div>
+
+  </div>)
+}

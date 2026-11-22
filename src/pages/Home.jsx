@@ -2,6 +2,7 @@ import { ButtonBase, DangerButton } from "../components/ButtonBase";
 import { useRef } from "react";
 import { useToast } from "../hooks/useToast";
 import { Hero } from "../components/Hero";
+import {CardProfile } from "../components/Cards";
 import { StarBackground } from "../components/StarBackground";
 import { About } from "./About";
 import { Skills } from "../components/Skills";
@@ -21,25 +22,38 @@ export const Home = ({ elements, scrollToSection, refs }) => {
       <section
         key={"HOME"}
         ref={(el) => { itemsRef.current["HOME"] = el; }}
-        style={{ height: "50vh"}}>
+        style={{ height: "100%"}}>
         <Hero
-        ></Hero>
-        <div style={{ width: "200px",  marginTop: "21px", marginRight: "auto", marginLeft: "auto"}}>
-        <ButtonBase
-          className="warning"
         >
-          <a href="#Projects">View my work</a>
-          </ButtonBase>
+        </Hero>
+        <div style={{ width: "200px",  marginTop: "21px", marginRight: "auto", marginLeft: "auto"}}>
+          <ButtonBase
+            className="warning"
+          >
+            <a href="#Projects">View my work</a>
+            </ButtonBase>
         </div>
+        <CardProfile imageUrl="../assets/images/profile_img.png"
+          className="CardImage"
+        >
+          <div>
+            <p>I'm passionate to bring <strong>solutions</strong> that transform your
+              business presence with modern Web <strong>technologies</strong>,
+              by designing, building and maintaining <strong>applications</strong> with quality testing and
+              modern deployment techniques and methodologies.You can check out some of my projects down below.
+            </p>
+          </div>
+        </CardProfile>
       </section>
       { /* ABOUT SECTION  */}
         <section
           key={"About"}
           ref={(el) => { itemsRef.current["About"] = el; }}
-          style={{ height: "100%" }}>
-            <About id="#About"
+          style={{ maxHeight: "100%" }}>
+          <About id="#About"
               heading="About Me"
-              subheading="Web developer and Tech Entusiast"
+          subheading="Web developer and Tech Entusiast"
+          style={{ height: "60vh"}}
             >
         </About>
         <div style={{ width: "200px",  marginTop: "21px", marginRight: "auto", marginLeft: "auto"}}>
@@ -54,7 +68,7 @@ export const Home = ({ elements, scrollToSection, refs }) => {
       <section
         key={"Skills"}
         ref={(el) => { itemsRef.current["Skills"] = el; }}
-        style={{ height: "70vh"}}>
+        style={{ height: "50vh"}}>
           <Skills
           ></Skills>
       </section>
@@ -62,7 +76,7 @@ export const Home = ({ elements, scrollToSection, refs }) => {
       <section
         key={"Projects"}
         ref={(el) => { itemsRef.current["Projects"] = el; }}
-        style={{ height: "70vh", marginTop: "50px"}}>
+        style={{ height: "65vh", marginTop: "50px"}}>
         <Projects></Projects>
         <div style={{ width: "200px", marginTop: "21px", marginRight: "auto", marginLeft: "auto"}}>
           <ButtonBase
@@ -79,7 +93,7 @@ export const Home = ({ elements, scrollToSection, refs }) => {
       <section
         key={"Contact"}
         ref={(el) => { itemsRef.current["Contact"] = el; }}
-        style={{ height: "62vh", margin: "55px 0"}}>
+        style={{ height: "55vh", margin: "55px 0"}}>
         <Contact>
         </Contact>
       </section>
