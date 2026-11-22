@@ -26,13 +26,7 @@ export const Home = ({ elements, scrollToSection, refs }) => {
         <Hero
         >
         </Hero>
-        <div style={{ width: "200px",  marginTop: "21px", marginRight: "auto", marginLeft: "auto"}}>
-          <ButtonBase
-            className="warning"
-          >
-            <a href="#Projects">View my work</a>
-            </ButtonBase>
-        </div>
+
         <CardProfile imageUrl="../assets/images/profile_img.png"
           className="CardImage"
         >

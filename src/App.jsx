@@ -56,6 +56,18 @@ export const App = () => {
         <Route path="/*" element={<NotFound></NotFound>}></Route>
       </Routes>
     </ToastProvider>
+    <div style={{
+      width: "30%", maxWidth:"500px", marginTop: "21px", marginRight: "auto", marginLeft: "auto",
+      position: "absolute", top: "460px", left: "37%", right:"50%"
+    }}>
+      <ButtonBase
+        className="warning"
+
+        onClick={() => scrollToSection("Projects")}
+      >
+        <a href="#Projects">View my work</a>
+        </ButtonBase>
+    </div>
     <button key={`nav-${"Sky"}`}
       style={{
         position: "fixed", zIndex: "99", right: "21px",
