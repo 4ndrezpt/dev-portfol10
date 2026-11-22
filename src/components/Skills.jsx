@@ -58,13 +58,13 @@ export const DisplayContent = ({ category }) =>
             {skillItem.map((item, index) =>
               <div key={`all-${item.id}-${index}`} >
                 <h6>{item.name}</h6>
-                <div style={{
+                { item.category !== "languages" ? <div><div  style={{
                   width: item.level+"%",
                   height: ".62rem",
                   backgroundColor: "var(--main-color)",
-                  borderRadius: "5px"
-                }}></div>
-              <p>{ item.level } %</p>
+                  borderRadius: "5px",
+                }}></div><p>{item.level} %</p></div>
+                  : <div><hr/><h4>{item.level}</h4></div>}
             </div>)}
           </div>;
     }
@@ -84,7 +84,7 @@ export const Skills = () => {
     },
     {
       id: uuid(),
-      title: "Backender",
+      title: "Backend",
       content: ()=>contentJSX("backender")
     },
     {

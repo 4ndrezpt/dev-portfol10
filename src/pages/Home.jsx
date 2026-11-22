@@ -39,7 +39,7 @@ export const Home = ({ elements, scrollToSection, refs }) => {
           <div>
             <p>I'm passionate to bring <strong>solutions</strong> that transform your
               business presence with modern Web <strong>technologies</strong>,
-              by designing, building and maintaining <strong>applications</strong> with quality testing and
+              by desining, building and maintaining <strong>applications</strong> with quality testing and
               modern deployment techniques and methodologies.You can check out some of my projects down below.
             </p>
           </div>
